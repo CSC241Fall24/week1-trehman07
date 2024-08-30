@@ -13,6 +13,5 @@ public class Ex1 {
         int count = 100;
         long result = calculateGaussSum(start, step, count);
         System.out.println("The sum is: " + result);
-        
     }
 }
