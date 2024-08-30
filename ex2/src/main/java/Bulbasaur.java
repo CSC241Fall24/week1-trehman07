@@ -2,58 +2,54 @@ public class Bulbasaur {
     private int id;
     private int level;
 
-    // Constructor
     public Bulbasaur() {
-        // TODO: Initialize id and level with appropriate values
+        this.id = 1;
+        this.level = 1;
     }
 
-    // setLevel method
     public void setLevel(int lv) {
-        // TODO: Implement this method
-        // Update the level
-        // If the new level is 16 or higher but less than 32, evolve to Ivysaur
-        // If the new level is 32 or higher, evolve to Venusaur
+        this.level = lv;
+        if (lv >= 32) {
+            this.id = 3;
+        } else if (lv >= 16) {
+            this.id = 2;
+        }
     }
 
-    // getLevel method
     public int getLevel() {
-        // TODO: Implement this method
-        return 0; // Placeholder return value
+        return this.level;
     }
 
-    // getName method
     public String getName() {
-        // TODO: Implement this method
-        // Return the name based on the current id
-        return ""; // Placeholder return value
+        switch (this.id) {
+            case 1: return "Bulbasaur";
+            case 2: return "Ivysaur";
+            case 3: return "Venusaur";
+            default: return "Unknown";
+        }
     }
 
-    // getID method
     public int getID() {
-        // TODO: Implement this method
-        return 0; // Placeholder return value
+        return this.id;
     }
 
-    // toString method
     @Override
     public String toString() {
-        // TODO: Implement this method
-        // Return a string representation of the Bulbasaur object
-        return ""; // Placeholder return value
+        return "Level: " + this.level + ", ID: " + this.id;
     }
 
-    // equals method
     @Override
     public boolean equals(Object obj) {
-        // TODO: Implement this method
-        // Compare this Bulbasaur object with another object
-        return false; // Placeholder return value
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Bulbasaur other = (Bulbasaur) obj;
+        return this.level == other.level && this.id == other.id;
     }
 
-    // copy method
     public Bulbasaur copy() {
-        // TODO: Implement this method
-        // Create and return a new Bulbasaur object with the same id and level
-        return null; // Placeholder return value
+        Bulbasaur clone = new Bulbasaur();
+        clone.id = this.id;
+        clone.level = this.level;
+        return clone;
     }
 }
