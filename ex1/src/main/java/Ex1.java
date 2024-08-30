@@ -1,4 +1,3 @@
-package ex1;
 public class Ex1 {
     public static long calculateGaussSum(long start, long step, int count) {
         long sum = 0;
